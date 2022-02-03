@@ -1,0 +1,119 @@
+{
+    "clientId": "selfissuingoidcclient",
+    "rootUrl": "https://home.datastyx.com/",
+    "adminUrl": "https://home.datastyx.com/",
+    "surrogateAuthRequired": false,
+    "enabled": true,
+    "alwaysDisplayInConsole": false,
+    "clientAuthenticatorType": "client-jwt",
+    "redirectUris": [
+        "https://home.datastyx.com/*"
+    ],
+    "webOrigins": [
+        "https://home.datastyx.com"
+    ],
+    "notBefore": 0,
+    "bearerOnly": false,
+    "consentRequired": false,
+    "standardFlowEnabled": false,
+    "implicitFlowEnabled": false,
+    "directAccessGrantsEnabled": false,
+    "serviceAccountsEnabled": true,
+    "publicClient": false,
+    "frontchannelLogout": false,
+    "protocol": "openid-connect",
+    "attributes": {
+        "saml.force.post.binding": "false",
+        "saml.multivalued.roles": "false",
+        "token.endpoint.auth.signing.alg": "RS256",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "use.jwks.url": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "use.refresh.tokens": "true",
+        "jwt.credential.certificate": "MIICuTCCAaECBgF+vEtxJzANBgkqhkiG9w0BAQsFADAgMR4wHAYDVQQDDBVzZWxmaXNzdWluZ29pZGNjbGllbnQwHhcNMjIwMjAyMjExNDI3WhcNMzIwMjAyMjExNjA3WjAgMR4wHAYDVQQDDBVzZWxmaXNzdWluZ29pZGNjbGllbnQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCjiOHZyCW8NzvDM9IhIatBbrsafEsCLr0iylx0aqqkRF3+ePrQsrMAkeIjzksWVS8efUJIDa2svaVUKvUYGhUONTsaM0ynobZNDsycXhiz3x3ft7VdKUzbyLCU1HxQUiLTkOLtcNk00y8OrJDA7M/Ls9DgzxWDzbDAjQwQJELWbirAeIxQZ3793gFuD83/m/8g0H8p9+3y3KlgF+U7dr+6VR2RSgUGpkm0sz3FTP8N3iyU5W2q4CVYeNogNeeUv3hb5RoWb6siii74RjxraIuM3GFWQtQKZ18LKAdPesZ9ZGSO1e0FhWYx2v0K2jT35Izx1yu/OtxDgPtoCwBKcz+BAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAEvvw48YmE8QnloDZOm17Fgv5pXDnPECLhIrZGYl8n4/6z/rSXB+D8pIgVLS5DQsUZPoadULeSpXPreyttwhoe0ozoURMYeKwRMzI2MItpNJ/ZuSjN8Za1Y0o/7Fq69aWK6d7TJqnoKC1Lt8A3jbEI+xDxM1d1eFn6U01PSPTneqo/NXEHvRhYPIsj7nX4l/U3b/tNnQgeuGhWmsvsVOvwy5SZnHk+hg3aSvM/o8FBV/RUx4PHXE/fWdArLz5XJEAnJd9u/BXmVhF4ftN+jGsIkuS7PhMg8DIHR0kW6xR4Ay2tAmxxzCiKLMwi2UTQjyo/2mifTv42232Ra6+nI/y/g=",
+        "oidc.ciba.grant.enabled": "false",
+        "use.jwks.string": "true",
+        "backchannel.logout.session.required": "true",
+        "client_credentials.use_refresh_token": "false",
+        "require.pushed.authorization.requests": "false",
+        "saml.client.signature": "false",
+        "id.token.as.detached.signature": "false",
+        "saml.assertion.signature": "false",
+        "jwks.string": "{\n  \"keys\": [\n    {\n      \"alg\": \"RS256\",\n      \"e\": \"AQAB\",\n      \"kid\": \"selfissuingoidcclient\",\n      \"kty\": \"RSA\",\n      \"n\": \"yFmcYrEIGRqlMNpBgpVD_GyffZxyQgynjQANd2jb6hJz3c-sMOaTIVF6HUrBjpZ6-KenjW8P6SVXQ8ls9Xx4UVNEQ_eib_wSVvpt3lkSOrXbnEwO15AggoOwFljyaRS03L39Pi_jsgYCN5v7wD6cJdk9Eb5lc-mf5_Ne0uPvGYzve4aveD8-XbJZaUs9i91YECtxFppmQaYtWQ8c151DJM4TlFvf6pYA1-U3tgXqDtqK50KWr58xujnIz83wXBQxKrcYzHcNyN4fJxlK3wmyN43z-gJYa3AA6FJDt4IHLGRbPXpEsZYP17PdQWuBKjZaDjbS_-sXefUwfA29DTXkyQ\",\n      \"use\": \"sig\"\n    }\n  ]\n}",
+        "saml.encrypt": "false",
+        "saml.server.signature": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "saml.artifact.binding": "false",
+        "jwks.url": "http://home.datastyx.com/jwks",
+        "saml_force_name_id_format": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "saml.authnstatement": "false",
+        "display.on.consent.screen": "false",
+        "saml.onetimeuse.condition": "false"
+    },
+    "authenticationFlowBindingOverrides": {},
+    "fullScopeAllowed": true,
+    "nodeReRegistrationTimeout": -1,
+    "protocolMappers": [
+        {
+            "name": "Client IP Address",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usersessionmodel-note-mapper",
+            "consentRequired": false,
+            "config": {
+                "user.session.note": "clientAddress",
+                "userinfo.token.claim": "true",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "clientAddress",
+                "jsonType.label": "String"
+            }
+        },
+        {
+            "name": "Client ID",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usersessionmodel-note-mapper",
+            "consentRequired": false,
+            "config": {
+                "user.session.note": "clientId",
+                "userinfo.token.claim": "true",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "clientId",
+                "jsonType.label": "String"
+            }
+        },
+        {
+            "name": "Client Host",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usersessionmodel-note-mapper",
+            "consentRequired": false,
+            "config": {
+                "user.session.note": "clientHost",
+                "userinfo.token.claim": "true",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "clientHost",
+                "jsonType.label": "String"
+            }
+        }
+    ],
+    "defaultClientScopes": [
+        "web-origins",
+        "profile",
+        "roles",
+        "email"
+    ],
+    "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+    ],
+    "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+    }
+}

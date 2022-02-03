@@ -1,0 +1,8 @@
+selfissuingoidcclient:
+    keyid : "selfissuingoidcclient" # keyId for the public key in the JWKS
+    oauthclientid : "selfissuingoidcclient" # OAuth 2.0 client_id as registered in the idp, required for the subject in the assertion token
+    port : http # port for the URL for exposing the JWKS with the public key to validate the self issued token of the client
+    jwksurlpath: "/jwks" # 'path' part of the URL for exposing the JWKS with the public key to validate the self issued token of the client
+remoteidp:
+    tokenendpoint: "https://idp.datastyx.com/auth/realms/master/protocol/openid-connect/token" # authorization server token endpoint
+    idpjwksendpoint: "https://idp.datastyx.com/auth/realms/master/protocol/openid-connect/certs" # keys of the idp to validate the received access token (validation typically done at the RS but for this demonstrator its done here)
