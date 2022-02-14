@@ -243,6 +243,8 @@ func createAssertionToken(keyid string, oauthClientId string, tokenEndpoint stri
 	token.Set("org", "datastyx")
 	token.Set("email", "someone@home.org")
 	token.Set("aciCOI", "MARIX")
+	token.Set("Unique Identifier", uuid.New().String())
+
 	// Sign the token and generate a payload
 	signed, err := jwt.Sign(token, jwa.RS256, privJwk)
 	if err != nil {
