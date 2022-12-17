@@ -1,3 +1,4 @@
 keyset.jwks
 pubkey.jwk
 pubkey.pem
+go-oidc-self-client.exe

@@ -243,6 +243,8 @@ func createAssertionToken(keyid string, oauthClientId string, tokenEndpoint stri
 	token.Set("org", "datastyx")
 	token.Set("email", "someone@home.org")
 	token.Set("aciCOI", "MARIX")
+	token.Set("Unique Identifier", uuid.New().String())
+
 	// Sign the token and generate a payload
 	signed, err := jwt.Sign(token, jwa.RS256, privJwk)
 	if err != nil {
@@ -284,7 +286,7 @@ func getAccessTokenWithAssertionGrant(tokenEndpoint string, oauthClientId string
 	// data.Set("client_secret", "5aff93c4-fe17-4371-b3cb-f93e32b013ec")
 	data.Set("client_assertion", string(assertionToken))
 	data.Set("client_assertion_type", "urn:ietf:params:oauth:client-assertion-type:jwt-bearer")
-	data.Set("audience", "some.custom.backend")
+	data.Set("resource", "http://some.custom.backend")
 
 	req, err := http.NewRequest("POST", tokenEndpoint, strings.NewReader(data.Encode()))
 	if err != nil {
@@ -304,11 +306,20 @@ func getAccessTokenWithAssertionGrant(tokenEndpoint string, oauthClientId string
 		return nil, fmt.Errorf("call the token endpoint '%s' got error : %s\n", tokenEndpoint, err)
 	}
 	defer resp.Body.Close()
+	responseDump, err := httputil.DumpResponse(resp, true)
+	if err != nil {
+		return nil, fmt.Errorf("Dumping the response from the token endpoint '%s' got error : %s\n", tokenEndpoint, err)
+	} else {
+		log.Printf("\nResponse received :\n")
+		log.Printf("\n%s\n\n", string(responseDump))
+	}
+
 	result, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, fmt.Errorf("Extracting the body from the response to the call to the token endpoint '%s' got error : %s\n", tokenEndpoint, err)
 	}
-	log.Println(string(result))
+
+	// log.Println(string(result))
 	var jsonBody map[string]interface{}
 	err = json.Unmarshal(result, &jsonBody)
 	if err != nil {
